@@ -1,0 +1,54 @@
+{% extends 'customer/base.html' %}
+
+{% block extra_css %}
+<style>
+    /* Custom styles for the DoorDash-like page */
+    .page-heading {
+        font-family: 'Arial Black', sans-serif;
+        font-size: 3rem;
+        color: #333;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .order-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card h2 {
+        font-family: 'Arial', sans-serif;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .order-btn {
+        background-color: #ff6f61;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+    }
+
+    .order-btn:hover {
+        background-color: #f05246;
+    }
+</style>
+{% endblock extra_css %}
+
+{% block content %}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+            <h1 class="page-heading">DoorDash - Food Delivery</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-1">
+        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center order-card">
+            <h2 class="mb-4">Hungry? Let's Get Started!</h2>
+            <a href="{% url 'order' %}" class="btn btn-lg order-btn">Order Now!</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
